@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics.Contracts;
 using System.Threading.Tasks.Dataflow;
 
 namespace MyGame
@@ -8,6 +9,13 @@ namespace MyGame
         private string name;
         private float health;
         private float shield;
+
+        private static int totalPowerUps = 0;
+
+        static Enemy()
+        {
+           totalPowerUps = 0;
+        }
 
         public enum PowerUp
         {
@@ -69,6 +77,12 @@ namespace MyGame
                 shield += value;
                 if (shield > 100) shield = 100;
             }
+            totalPowerUps++;
+        }
+
+        public static int GetTotalPowerUps()
+        {
+           return totalPowerUps;
         }
 
         public void DisplayInfo()
@@ -108,6 +122,8 @@ namespace MyGame
             enemy1.DisplayInfo();
             enemy2.PickupPowerUp(PowerUp.Shield, 60);
             enemy2.DisplayInfo();
+
+            Console.WriteLine($"Total de PowerUps: {Enemy.GetTotalPowerUps()}");
         }
     }
 }
