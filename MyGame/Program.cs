@@ -92,21 +92,6 @@ namespace MyGame
 
         private static void Main(string[] args)
         {
-            //int numEnemies = int.Parse(args[0]);
-            //Enemy[] enemies = new Enemy[numEnemies];
-
-            //for (int i = 0; i < numEnemies; i++)
-            //{
-                //Console.Write($"Nome do inimigo {i + 1}: ");
-                //string name = Console.ReadLine();
-                //enemies[i] = new Enemy(name, 100, 0);
-           // }
-
-            //foreach (var enemy in enemies)
-            //{
-                //Console.WriteLine($"{enemy.GetName()} {enemy.GetHealth()} {enemy.GetShield()}");
-            //}
-
             Enemy enemy1 = new Enemy("Darth Vader", 100, 0);
             Enemy enemy2 = new Enemy("Khan Noonien Singh", 100, 0);
 
